@@ -1,9 +1,10 @@
-##from whatsapp_api_client_python import API
+
 import random
 import pandas as pd
 from datetime import datetime
 import os
 import openai
+import pywhatkit
 
 #Import secret variables
 from config import OPENAI_API_KEY, TEXTMESSAGE_OPENAI_PROMPT_Part1, TEXTMESSAGE_OPENAI_PROMPT_Part2, GENERATE_AI_TEXT, TABEL_NAME
@@ -22,6 +23,13 @@ for value in column_values:
     print(value)
 
 NAME = value
+
+column_values = data.iloc[:, 3]
+
+for value in column_values:
+    print(value2)
+
+TEL_NUMBER = value2
 
 #OGenerate AI Message
 openai.api_key = OPENAI_API_KEY
@@ -61,16 +69,4 @@ elif GENERATE_AI_TEXT == 2:
 
 
 
-greenAPI = API.GreenApi(
-    "1101000001", "d75b3a66374942c5b3c019c698abc2067e151558acbd412345"
-)
-
-
-def main():
-    response = greenAPI.sending.sendMessage("TEL_NUMBER@c.us", FINALTEXT)
-
-    print(response.data)
-
-
-if __name__ == '__main__':
-    main()
+pywhatkit.sendwhatmsg(TEL_NUMBER, FINALTEXT, 18, 55, 15, True, 2)
