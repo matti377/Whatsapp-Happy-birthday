@@ -32,12 +32,12 @@ CHATGPT_TEXT = openai.ChatCompletion.create(
 
 
 #generate random message from list
-number = random.randint(1, 9)
+number = random.randint(1, 8)
 print(number)
 if number == 1:
     RANDOMTEXT = "Happy Birthday " + NAME
 elif number == 2:
-    RANDOMTEXT = "Vill Gléck fir dain Gebuertsdaag"
+    RANDOMTEXT = "Happy Birthday"
 elif number == 3:
     RANDOMTEXT = "Happy Birthday :)"
 elif number == 4:
@@ -50,8 +50,7 @@ elif number == 7:
     RANDOMTEXT = "Happy Birthday 🎂🎁" 
 elif number == 8:
     RANDOMTEXT = "Happy Birthday 🍰🎂🎈"
-elif number == 9:
-    RANDOMTEXT = "Happy Birthday"
+
 
 
 #Generate final message
